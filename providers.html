@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM - Providers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Modal Add Campaign -->
+    <div class="modal fade" id="addCampaign" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="input-container">
+              <input placeholder="Enter Campaign Name" class="input-field" type="text" />
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5>Country</h5>
+            <select class="form-select mx-2" aria-label="Default select example">
+              <option selected>Select Country</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <h5>Vertical</h5>
+            <select class="form-select mx-2" aria-label="Default select example">
+              <option selected>Select</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="input-container">
+              <label for="input-field" class="input-label">Service</label>
+              <input placeholder="" class="input-field" type="text" />
+            </div>
+            <h5>Flow</h5>
+            <select class="form-select mx-2" aria-label="Default select example">
+              <option selected>Select Flow</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="input-container">
+              <label for="input-field" class="input-label">Link</label>
+              <input placeholder="" class="input-field" type="text" />
+            </div>
+            <h5>Provider Aproval</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+              <label class="form-check-label" for="flexRadioDefault1"> Approved </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+              <label class="form-check-label" for="flexRadioDefault2"> Not Approved </label>
+            </div>
+            <div class="upload-image"><p>Upload Image</p></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary"><i class="fa-solid fa-circle-plus"></i> ADD</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <img src="images/logo.svg" alt="CRM Logo" />
+        </div>
+        <ul class="list-unstyled components">
+          <li><i class="fa-solid fa-house"></i> <a href="#">Home</a></li>
+          <li class="active">
+            <i class="fa-solid fa-diagram-project"></i>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Marketing</a>
+            <ul class="collapse lisst-unstyled" id="homeSubmenu">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Home</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <i class="fa-solid fa-globe"></i>
+            <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Operations</a>
+          </li>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Home</a>
+            </li>
+          </ul>
+          <li><i class="fa-solid fa-user"></i> <a href="#">Contacts</a></li>
+          <li><i class="fa-solid fa-calendar"></i> <a href="#">Agenda</a></li>
+          <li><i class="fa-solid fa-tag"></i><a href="#">Tags</a></li>
+        </ul>
+      </nav>
+      <main>
+        <header>
+          <div class="topbar">
+            <div class="group">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                <g>
+                  <path
+                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                  ></path>
+                </g>
+              </svg>
+              <input placeholder="Search" type="search" class="input" />
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-circle-plus"></i>
+              <i class="fa-solid fa-bell"></i>
+              <i class="fa-solid fa-circle-question"></i>
+              <i class="fa-solid fa-circle-user"></i>
+            </div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="countries-header my-3">
+            <h2>Providers <i class="fa-solid fa-circle-plus" data-bs-toggle="modal" data-bs-target="#addCampaign"></i></h2>
+            <div class="right">
+              <select class="form-select mx-2" style="width: 150px" aria-label="Default select example">
+                <option selected>Country</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <select class="form-select" style="width: 150px" aria-label="Default select example">
+                <option selected>Vertical</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Logo</th>
+                <th scope="col">Name<i class="fa-solid fa-sort mx-2"></i></th>
+                <th scope="col">Contact Person<i class="fa-solid fa-sort mx-2"></i></th>
+                <th scope="col">LinkedIn</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><img class="provider-logo" src="images/actel.png" alt="" /></th>
+                <td>Actel</td>
+                <td>Lola Merino</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/josegilabert/" target="blank"
+                    >https://www.linkedin.com/in/josegilabert/</a
+                  >
+                </td>
+                <td>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><img class="provider-logo" src="images/bizao.png" alt="" /></th>
+                <td>Bizao</td>
+                <td>Lola Merino</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/josegilabert/" target="blank"
+                    >https://www.linkedin.com/in/josegilabert/</a
+                  >
+                </td>
+                <td>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><img class="provider-logo" src="images/actel.png" alt="" /></th>
+                <td>Actel</td>
+                <td>Lola Merino</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/josegilabert/" target="blank"
+                    >https://www.linkedin.com/in/josegilabert/</a
+                  >
+                </td>
+                <td>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><img class="provider-logo" src="images/bizao.png" alt="" /></th>
+                <td>Bizao</td>
+                <td>Lola Merino</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/josegilabert/" target="blank"
+                    >https://www.linkedin.com/in/josegilabert/</a
+                  >
+                </td>
+                <td>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><img class="provider-logo" src="images/actel.png" alt="" /></th>
+                <td>Actel</td>
+                <td>Lola Merino</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/josegilabert/" target="blank"
+                    >https://www.linkedin.com/in/josegilabert/</a
+                  >
+                </td>
+                <td>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><img class="provider-logo" src="images/bizao.png" alt="" /></th>
+                <td>Bizao</td>
+                <td>Lola Merino</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/josegilabert/" target="blank"
+                    >https://www.linkedin.com/in/josegilabert/</a
+                  >
+                </td>
+                <td>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><img class="provider-logo" src="images/actel.png" alt="" /></th>
+                <td>Actel</td>
+                <td>Lola Merino</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/josegilabert/" target="blank"
+                    >https://www.linkedin.com/in/josegilabert/</a
+                  >
+                </td>
+                <td>
+                  <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
