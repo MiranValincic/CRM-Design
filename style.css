@@ -6,16 +6,18 @@
   --text: #202020;
 }
 
-html {font-size: 10px;}
+html {
+  font-size: 10px;
+}
 
 body {
-  background: url('images/bck-gradient.svg') center no-repeat;
+  background: url("images/bck-gradient.svg") center no-repeat;
   background-size: cover;
   padding: 30px;
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
-  font-family: 'Inter', sans-serif !important;
+  height: 100%;
+  font-family: "Inter", sans-serif !important;
   color: #202020 !important;
   font-size: 1.3rem !important;
 }
@@ -38,15 +40,13 @@ body > .wrapper > main {
   background: var(--white);
 }
 
-a, 
-a:hover, 
+a,
+a:hover,
 a:focus {
   color: var(--text);
   text-decoration: none;
   transition: all 0.3s;
 }
-
-
 
 /* Sidebar  */
 
@@ -66,14 +66,14 @@ a:focus {
   padding: 15px 20px;
   align-items: center;
   gap: 20px;
-  transition: .5s;
+  transition: 0.5s;
   background: transparent;
   border-radius: 0;
   border-radius: 30px;
 }
 
 #sidebar ul li:hover {
-  background: var(--white); 
+  background: var(--white);
   transform: scale(1.1);
 }
 
@@ -95,8 +95,6 @@ a:focus {
   border-bottom: 1px solid var(--white);
   margin-right: 20px;
 }
-
-
 
 /* Topbar */
 
@@ -180,8 +178,7 @@ a:focus {
   z-index: 2;
 }
 
-
-/* Content */ 
+/* Content */
 
 .card-geos .card-header {
   background-color: #0054d4;
@@ -221,4 +218,3 @@ a:focus {
   position: absolute;
   right: 0;
 }
-

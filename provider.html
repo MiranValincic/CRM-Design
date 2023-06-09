@@ -27,7 +27,7 @@
     />
   </head>
   <body>
-    <!-- Modal -->
+    <!-- Modal Add Note -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -55,56 +55,47 @@
         </div>
       </div>
     </div>
-    <!-- Modal Add Campaign -->
-    <div class="modal fade" id="addCampaign" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Provider Informations -->
+    <div class="modal fade" id="providerInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <div class="input-container">
-              <input placeholder="Enter Campaign Name" class="input-field" type="text" />
-            </div>
+            <h1 class="modal-title">Provider Information</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h5>Country</h5>
-            <select class="form-select mx-2" aria-label="Default select example">
-              <option selected>Select Country</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <h5>Vertical</h5>
-            <select class="form-select mx-2" aria-label="Default select example">
-              <option selected>Select</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
             <div class="input-container">
-              <label for="input-field" class="input-label">Service</label>
+              <label for="input-field" class="input-label">Billing Provider</label>
+              <input placeholder="Lola Merino" class="input-field" type="text" />
+            </div>
+            <div class="input-container">
+              <label for="input-field" class="input-label">Contact Person</label>
               <input placeholder="" class="input-field" type="text" />
             </div>
-            <h5>Flow</h5>
-            <select class="form-select mx-2" aria-label="Default select example">
-              <option selected>Select Flow</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
             <div class="input-container">
-              <label for="input-field" class="input-label">Link</label>
+              <label for="input-field" class="input-label">Email</label>
               <input placeholder="" class="input-field" type="text" />
             </div>
-            <h5>Provider Aproval</h5>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-              <label class="form-check-label" for="flexRadioDefault1"> Approved </label>
+            <div class="input-container">
+              <label for="input-field" class="input-label">Skype</label>
+              <input placeholder="" class="input-field" type="text" />
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
-              <label class="form-check-label" for="flexRadioDefault2"> Not Approved </label>
+            <div class="input-container">
+              <label for="input-field" class="input-label">LinkedIn Profile</label>
+              <input placeholder="" class="input-field" type="text" />
             </div>
+            <label for="input-field" class="input-label">Logo</label>
             <div class="upload-image"><p>Upload Image</p></div>
+            <h5>Notes</h5>
+            <div class="input-container">
+              <label for="input-field" class="input-label">Title</label>
+              <input placeholder="" class="input-field" type="text" />
+            </div>
+            <div class="input-container">
+              <label for="input-field" class="input-label">Description</label>
+              <input placeholder="" class="input-field" type="text" />
+            </div>
+            <button type="button" class="btn btn-primary"><i class="fa-solid fa-circle-plus"></i> Add Note</button>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary"><i class="fa-solid fa-circle-plus"></i> ADD</button>
@@ -112,7 +103,7 @@
         </div>
       </div>
     </div>
-    <div class="wrapper">
+    <div class="wrapper d-flex">
       <nav id="sidebar">
         <div class="sidebar-header">
           <img src="images/logo.svg" alt="CRM Logo" />
@@ -184,18 +175,44 @@
             </div>
           </div>
           <div class="col float">
-            <div class="card m-3" style="width: 18rem">
+            <div class="card m-3">
               <div class="card-body d-flex justify-content-between">
-                <h5 class="card-title">Information</h5>
-                <i class="fa-regular fa-pen-to-square"></i>
+                <h3 class="card-title">Information</h3>
+                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#providerInfo"></i>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Name</li>
-                <li class="list-group-item">Country</li>
-                <li class="list-group-item">Vertical</li>
-                <li class="list-group-item">Service</li>
-                <li class="list-group-item">Flow</li>
-                <li class="list-group-item">Provider approval</li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <h5>Billing provider</h5>
+                  <p>Name</p>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <h5>Contact person</h5>
+                  <p>Luis Boza</p>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <h5>Email</h5>
+                  <p>email@company.es</p>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <h5>Skype</h5>
+                  <p><a href="#"></a> https://skype.com</p>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <h5>LinkedIn profile</h5>
+                  <p><a href="#">https://linkedin/na...</a></p>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <h5>Company Logo</h5>
+                  <img src="images/actel.png" alt="" />
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <h5>Notes</h5>
+                  <ul>
+                    <li>Note 1</li>
+                    <li>Note 3</li>
+                    <li>Note 3</li>
+                  </ul>
+                </li>
               </ul>
               <div class="card-body">
                 <a href="#" class="card-link">Link</a>
@@ -204,52 +221,34 @@
             <div class="card m-3">
               <div class="card-body">
                 <div class="d-flex justify-content-between">
-                  <h5 class="card-title">
-                    Notes
-                    <!-- Button trigger modal -->
-                    <i class="fa-solid fa-circle-plus" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-                  </h5>
-                  <select class="form-select mx-2" style="width: 150px" aria-label="Default select example">
-                    <option selected>Author</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+                  <h3 class="card-title">
+                    Services
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </h3>
                 </div>
                 <table class="table table-hover">
                   <thead>
                     <tr>
+                      <th scope="col">Service Name</th>
                       <th scope="col">Date <i class="fa-solid fa-sort mx-2"></i></th>
-                      <th scope="col">Author<i class="fa-solid fa-sort mx-2"></i></th>
-                      <th scope="col">Note Title</th>
-                      <th scope="col"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
+                      <td>GameTime</td>
                       <td scope="row">03/06/2023</td>
-                      <td>Lola Merino</td>
-                      <td>Drop</td>
                     </tr>
                     <tr>
+                      <td>TerraInfo</td>
                       <td scope="row">03/06/2023</td>
-                      <td>Lola Merino</td>
-                      <td>Drop</td>
                     </tr>
                     <tr>
+                      <td>WorkIt</td>
                       <td scope="row">03/06/2023</td>
-                      <td>Lola Merino</td>
-                      <td>Drop</td>
                     </tr>
                     <tr>
+                      <td>GameLoad</td>
                       <td scope="row">03/06/2023</td>
-                      <td>Lola Merino</td>
-                      <td>Drop</td>
-                    </tr>
-                    <tr>
-                      <td scope="row">03/06/2023</td>
-                      <td>Lola Merino</td>
-                      <td>Drop</td>
                     </tr>
                   </tbody>
                 </table>
